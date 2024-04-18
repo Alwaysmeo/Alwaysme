@@ -1,0 +1,34 @@
+{
+	"name": "@alwaysme/editor",
+	"version": "0.0.1",
+	"private": false,
+	"title": "Alwaysme Editor",
+	"description": "Alwaysme Editor",
+	"keywords": [
+		"alwaysme",
+		"editor",
+		"vue3"
+	],
+	"homepage": "https://www.alwaysme.org",
+	"author": "AlwaysMeo <hello2000@vip.qq.com>",
+	"license": "MIT",
+	"module": "./dist/es/packages/main.es.js",
+	"main": "./dist/lib/packages/main.cjs.js",
+	"exports": {
+		".": {
+			"module": "./dist/es/packages/main.es.js",
+			"main": "./dist/lib/packages/main.cjs.js"
+		},
+		"./style.css": "./dist/es/style.css"
+	},
+	"style": "./dist/es/style.css",
+	"files": [
+		"./dist/"
+	],
+	"repository": "https://github.com/alwaysmeo/alwaysme.git",
+	"scripts": {
+		"dev": "pnpm run --filter ./packages dev",
+		"build": "pnpm run --filter ./packages build",
+		"lint": "pnpm run --filter ./packages lint"
+	}
+}

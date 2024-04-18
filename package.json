@@ -7,20 +7,37 @@
 	"keywords": [
 		"alwaysme",
 		"design",
-		"component library"
+		"component library",
+		"editor"
 	],
 	"homepage": "https://www.alwaysme.org",
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
-	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
+	"repository": "https://github.com/alwaysmeo/alwaysme.git",
 	"scripts": {
-		"clean": "rimraf ./design/dist && rimraf ./design/docs",
-		"clean:dist": "rimraf ./design/dist",
-		"clean:docs": "rimraf ./design/docs",
-		"dev": "pnpm run --filter ./design dev",
-		"build": "npm run clean:dist && pnpm run --filter ./design build",
-		"dev:docs": "pnpm run --filter ./design dev:docs",
-		"build:docs": "npm run clean:docs && pnpm run --filter ./design build:docs",
-		"lint": "pnpm run --filter ./design/packages lint"
+		"editor:dev": "pnpm run --filter ./editor dev",
+		"editor:build": "pnpm run --filter ./editor build"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.0.4",
+		"@vitejs/plugin-vue-jsx": "^3.1.0",
+		"@vue/eslint-config-prettier": "^9.0.0",
+		"@vueuse/core": "^10.9.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-vue": "^9.25.0",
+		"prettier": "^3.2.5",
+		"radash": "^12.1.0",
+		"rollup-plugin-visualizer": "^5.12.0",
+		"sass": "^1.75.0",
+		"vite": "^5.2.9",
+		"vite-plugin-dts": "^3.8.3",
+		"vite-plugin-vue-devtools": "^7.0.27",
+		"vue": "^3.4.23",
+		"vue-router": "^4.3.1",
+		"vue-tsc": "^2.0.13"
+	},
+	"volta": {
+		"node": "20.11.1",
+		"pnpm": "8.15.4"
 	}
 }
