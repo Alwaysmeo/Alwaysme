@@ -1,8 +1,12 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "exclude": ["node_modules", "dist"]
+	"compilerOptions": {
+		"paths": {
+			"@": ["./"],
+			"@components": ["./components"],
+			"@hooks": ["./hooks"],
+			"@utils": ["./utils"],
+			"@styles": ["./styles"]
+		}
+	},
+	"exclude": ["node_modules", "dist"]
 }

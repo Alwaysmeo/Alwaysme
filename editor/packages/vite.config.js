@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'path'
-import viteDts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
@@ -11,19 +10,11 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		root: { production: resolve(__dirname, './'), development: resolve(__dirname, '../examples') }[mode],
-		plugins: [
-			vue(),
-			vueJsx(),
-			viteDts({
-				outDir: `${VITE_OUTDIR}/es`,
-				tsconfigPath: './tsconfig.json'
-			}),
-			visualizer()
-		],
+		plugins: [vue(), vueJsx(), visualizer()],
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `@import './style/index.scss';`
+					additionalData: `@import './styles/index.scss';`
 				}
 			}
 		},
@@ -31,16 +22,16 @@ export default defineConfig(({ mode }) => {
 			alias: {
 				'@': resolve(__dirname, './'),
 				'@components': resolve(__dirname, './components'),
-				'@config': resolve(__dirname, './config'),
 				'@hooks': resolve(__dirname, './hooks'),
 				'@utils': resolve(__dirname, './utils'),
-				'@style': resolve(__dirname, './style')
+				'@styles': resolve(__dirname, './styles'),
+				'@assets': resolve(__dirname, './assets'),
 			}
 		},
 		build: {
 			target: 'modules',
-			outDir: `${VITE_OUTDIR}`,
-			minify: true, // 压缩
+			outDir: VITE_OUTDIR,
+			minify: true,
 			cssCodeSplit: false,
 			lib: {
 				entry: resolve(__dirname, './index.js'),
@@ -69,7 +60,7 @@ export default defineConfig(({ mode }) => {
 		},
 		server: {
 			host: VITE_HOST,
-			port: Number(VITE_PORT),
+			port: VITE_PORT,
 			open: VITE_OPEN,
 			hmr: VITE_HMR
 		}
