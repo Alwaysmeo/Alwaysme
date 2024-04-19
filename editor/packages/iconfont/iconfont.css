@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4513576 */
+  src: url('iconfont.woff2?t=1713496823283') format('woff2'),
+       url('iconfont.woff?t=1713496823283') format('woff'),
+       url('iconfont.ttf?t=1713496823283') format('truetype'),
+       url('iconfont.svg?t=1713496823283#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-redo:before {
+  content: "\e660";
+}
+
+.icon-bold:before {
+  content: "\e661";
+}
+
+.icon-backcolor:before {
+  content: "\e662";
+}
+
+.icon-formatbrush:before {
+  content: "\e663";
+}
+
+.icon-undo:before {
+  content: "\e664";
+}
+
+.icon-alignleft:before {
+  content: "\e656";
+}
+
+.icon-aligncenter:before {
+  content: "\e657";
+}
+
+.icon-editor-icon-12:before {
+  content: "\e658";
+}
+
+.icon-alignright:before {
+  content: "\e659";
+}
+
+.icon-editor-icon-11:before {
+  content: "\e65a";
+}
+
+.icon-fontcolor:before {
+  content: "\e655";
+}
+
+.icon-alignjustify:before {
+  content: "\e65b";
+}
+
+.icon-editor-icon-13:before {
+  content: "\e65c";
+}
+
+.icon-source:before {
+  content: "\e65d";
+}
+
+.icon-italic:before {
+  content: "\e65e";
+}
+
+.icon-formatremove:before {
+  content: "\e65f";
+}
+

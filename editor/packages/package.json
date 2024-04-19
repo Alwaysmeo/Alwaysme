@@ -1,5 +1,5 @@
 {
-	"name": "packages",
+	"type": "module",
 	"scripts": {
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
 		"dev": "vite --host --mode development",

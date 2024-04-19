@@ -1,8 +1,9 @@
+import { resolve } from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import viteRemoveConsole from 'vite-plugin-remove-console'
 
 export default defineConfig(({ mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
@@ -10,7 +11,12 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		root: { production: resolve(__dirname, './'), development: resolve(__dirname, '../examples') }[mode],
-		plugins: [vue(), vueJsx(), visualizer()],
+		plugins: [
+			vue(),
+			vueJsx(),
+			visualizer({ open: true }),
+			viteRemoveConsole({ externalValue: ['version'] })
+		],
 		css: {
 			preprocessorOptions: {
 				scss: {
@@ -26,6 +32,7 @@ export default defineConfig(({ mode }) => {
 				'@utils': resolve(__dirname, './utils'),
 				'@styles': resolve(__dirname, './styles'),
 				'@assets': resolve(__dirname, './assets'),
+				'@iconfont': resolve(__dirname, './iconfont')
 			}
 		},
 		build: {
