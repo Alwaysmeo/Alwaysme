@@ -9,7 +9,11 @@
 
 	function handler() {
 		emits('handler')
-		useExecCommand('bold')
+		console.log(contentRef.value.getSelection().toString())
+		console.log(contentRef.value.getSelection())
+		// contentRef.value.baseNode.
+		// contentRef.value.focusNode.
+		// useExecCommand('bold')
 	}
 </script>
 

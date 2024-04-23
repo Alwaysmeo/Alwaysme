@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import viteRemoveConsole from 'vite-plugin-remove-console'
 
 export default defineConfig(({ mode }) => {
-	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
+	const { VITE_HOST, VITE_PORT, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
 	console.log(loadEnv(mode, __dirname))
 
 	return {
@@ -68,7 +68,7 @@ export default defineConfig(({ mode }) => {
 		server: {
 			host: VITE_HOST,
 			port: VITE_PORT,
-			open: VITE_OPEN,
+			open: false,
 			hmr: VITE_HMR
 		}
 	}
