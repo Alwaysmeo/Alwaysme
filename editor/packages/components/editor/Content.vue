@@ -1,10 +1,11 @@
 <script setup>
 	import '@styles/content.scss'
-	import { reactive, watch, onMounted, computed } from 'vue'
+	import { ref, reactive, watch, onMounted, computed } from 'vue'
 
 	defineExpose({ getContent, setContent, getSelection })
 	const emits = defineEmits(['changeContent'])
 
+	const contentRef = ref()
 	const node = reactive([
 		{
 			key: 1,
@@ -42,11 +43,16 @@
 		console.log(params)
 	}
 
-	onMounted(() => {})
+	onMounted(() => {
+		console.log(contentRef.value)
+		document.addEventListener('selectionchange', function (event) {
+			console.log(this.getSelection().toString())
+		})
+	})
 </script>
 
 <template>
-	<div class="conten-container" contenteditable="true" spellcheck="false" v-html="contnet" @input="aa"></div>
+	<div ref="contentRef" class="conten-container" contenteditable="true" spellcheck="false" v-html="contnet" @input="aa"></div>
 </template>
 
 <style scoped lang="scss">

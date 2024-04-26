@@ -1,0 +1,5 @@
+$namespace-base: #{$namespace}-timeline;
+
+.#{$namespace-base} {
+	text-align: var(--#{$namespace-base}-item-position);
+}

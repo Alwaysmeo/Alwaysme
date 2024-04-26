@@ -7,32 +7,21 @@
 	"keywords": [
 		"alwaysme",
 		"design",
-		"component library",
-		"editor"
+		"component library"
 	],
 	"homepage": "https://www.alwaysme.org",
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
 	"repository": "https://github.com/alwaysmeo/alwaysme.git",
 	"scripts": {
-		"editor:dev": "pnpm run --filter ./editor dev",
-		"editor:build": "pnpm run --filter ./editor build"
+		"design:dev": "pnpm run --filter ./design dev",
+		"design:build": "pnpm run --filter ./design build"
 	},
 	"devDependencies": {
-		"@vitejs/plugin-vue": "^5.0.4",
-		"@vitejs/plugin-vue-jsx": "^3.1.0",
 		"@vue/eslint-config-prettier": "^9.0.0",
-		"@vueuse/core": "^10.9.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-vue": "^9.25.0",
-		"prettier": "^3.2.5",
-		"radash": "^12.1.0",
-		"rollup-plugin-visualizer": "^5.12.0",
-		"sass": "^1.75.0",
-		"vite": "^5.2.9",
-		"vite-plugin-remove-console": "^2.2.0",
-		"vue": "^3.4.23",
-		"vue-router": "^4.3.1"
+		"prettier": "^3.2.5"
 	},
 	"volta": {
 		"node": "20.11.1"

@@ -29,7 +29,8 @@
 		console.log(contnet)
 	}
 
-	onMounted(() => {})
+	onMounted(() => {
+	})
 </script>
 
 <template>
